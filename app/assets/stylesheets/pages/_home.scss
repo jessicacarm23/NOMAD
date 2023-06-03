@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-bar {
+  position: absolute;
+  top: 57%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  // background-color: transparent;
+}
+
+.search-input {
+  width: 300px; /* Adjust the width as needed */
+  height: 60px; /* Adjust the height as needed */
+  font-size: 30px; /* Adjust the font size as needed */
+}
+
+.search-button {
+  width: 100px; /* Adjust the width as needed */
+  height: 60px; /* Adjust the height as needed */
+  font-size: 20px; /* Adjust the font size as needed */
+}

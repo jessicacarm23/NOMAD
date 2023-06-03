@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+
+<div class="image-container">
+  <%= image_tag @image_path, alt: 'Image description' %>
+  <div class="search-bar">
+
+    <form action="/search" method="get">
+      <input type="text" name="query" placeholder="Search for a city" class="search-input">
+      <button type="submit" class="search-button">Go</button>
+    </form>
+  </div>
+</div>
+
+
+<div id="map"></div>
