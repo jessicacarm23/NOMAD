@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def show
+    @city = params[:city]
+  end
 end
