@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @image_path = 'Digitaln.jpeg'
+    @image_path2 = 'Map.png'
   end
 
   def show
