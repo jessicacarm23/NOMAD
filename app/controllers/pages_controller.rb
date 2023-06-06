@@ -8,4 +8,7 @@ class PagesController < ApplicationController
   def show
     @city = params[:city]
   end
+
+  def profile
+  end
 end
