@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+<<<<<<< HEAD
+=======
+  # get "/Home", to: "pages#home"
+  # get "/:city", to: "pages#show"
+>>>>>>> master
   resources :article, only: [:show, :new, :create, :index, :destroy]
   resources :saved_articles, only: [:create, :index, :destroy]
   resources :chat_rooms, only: [:create, :show, :destroy]
