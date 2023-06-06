@@ -1,0 +1,8 @@
+<h1>Articles for <%= @city %> - <%= @topic %></h1>
+
+<% @articles.each do |article| %>
+  <div class="card">
+    <h2><%= article.title %></h2>
+    <p><%= article.content %></p>
+  </div>
+<% end %>
