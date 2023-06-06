@@ -1,11 +1,9 @@
 
 
-
 <div class="image-container">
-  <%= image_tag @image_path, alt: 'Image description' %>
+  <%= image_tag @image_path, alt: 'Postcard', class: 'responsive-image' %>
   <div class="search-bar">
-
-    <form action="/search" method="get">
+    <form id="search-form">
       <input type="text" name="query" placeholder="Search for a city" class="search-input">
       <button type="submit" class="search-button">Go</button>
     </form>
@@ -13,4 +11,9 @@
 </div>
 
 
-<div id="map"></div>
+
+
+<div class="image-container">
+  <%= image_tag @image_path2, alt: 'Map', class: 'responsive-image' %>
+  <div id="map"></div>
+</div>

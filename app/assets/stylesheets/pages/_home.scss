@@ -1,7 +1,7 @@
-// Specific CSS for your home-page
 .image-container {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .search-bar {
@@ -9,19 +9,59 @@
   top: 57%;
   left: 20%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  // background-color: transparent;
+  background-color: rgba(255, 125, 0, 0.8);
+  padding: 0px;
+  width: 80%;
+  max-width: 300px;
 }
 
 .search-input {
-  width: 300px; /* Adjust the width as needed */
-  height: 60px; /* Adjust the height as needed */
-  font-size: 30px; /* Adjust the font size as needed */
+  width: 100%;
+  height: 60px;
+  font-size: 30px;
+  padding: 0px;
 }
 
 .search-button {
-  width: 100px; /* Adjust the width as needed */
-  height: 60px; /* Adjust the height as needed */
-  font-size: 20px; /* Adjust the font size as needed */
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+  padding: 0px;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .responsive-image {
+    width: 100%;
+  }
+
+  .search-bar {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-image {
+    width: 100%;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .search-input {
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  .search-button {
+    font-size: 18px;
+    padding: 6px;
+  }
 }
