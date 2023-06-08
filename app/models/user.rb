@@ -6,4 +6,12 @@ class User < ApplicationRecord
   has_many :messages
   has_many :saved_articles
   has_many :articles
+
+
+  include PgSearch::Model
+pg_search_scope :search_by_city,
+  against: [ :city ],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
 end

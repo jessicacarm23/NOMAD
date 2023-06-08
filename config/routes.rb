@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :article, only: [:show, :new, :create, :index, :destroy]
   resources :saved_articles, only: [:create, :index, :destroy]
   resources :chat_rooms, only: [:create, :show, :destroy]
-  resources :users, only: [:edit]
+  resources :users, only: [:edit, :index]
   get ":city/articles/topics", to: "articles#topic"
   get "/profile", to: "pages#profile"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
