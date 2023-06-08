@@ -6,7 +6,10 @@ class PagesController < ApplicationController
     @image_path2 = 'Map.png'
   end
 
-  def show
-    @city = params[:city]
+  # def show
+  #   @city = params[:city]
+  # end
+
+  def profile
   end
 end

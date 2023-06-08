@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+
   def topic
     @city = params[:city]
     @topic = params[:topic]
@@ -13,4 +14,5 @@ class ArticlesController < ApplicationController
     @topic = params[:topic]
     @articles = Article.where(topic: @topic)
   end
+
 end
