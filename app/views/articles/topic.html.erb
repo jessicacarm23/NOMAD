@@ -1,0 +1,17 @@
+<style>
+  .topic-header {
+    color: rgb(204, 85, 0);
+    font-family: "Corsiva", cursive;
+  }
+</style>
+
+<h1 class="topic-header">Articles for <%= @city %> - <%= @topic %></h1>
+
+<div class="card-container">
+  <% @articles.each do |article| %>
+    <div class="card">
+      <h2><%= article.title %></h2>
+      <p><%= article.content %></p>
+    </div>
+  <% end %>
+</div>
