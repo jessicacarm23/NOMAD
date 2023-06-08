@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  get "/Home", to: "articles#topic"
+  get "/Home", to: "pages#home"
   get "/Home?query=:city", to: "pages#city"
   get "/:city", to: "pages#city"
   resources :article, only: [:show, :new, :create, :index, :destroy]
