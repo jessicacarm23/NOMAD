@@ -3,9 +3,12 @@
 <div class="image-container">
   <%= image_tag "Digitaln.jpg", alt: 'Postcard', class: 'responsive-image' %>
   <div class="search-bar">
-    <form id="search-form">
+    <form id="search-form" action="/cities/search">
       <input type="text" name="query" placeholder="Search for a city" class="search-input">
-      <button type="submit" class="search-button">Go</button>
+      <%=text_field_tag :query,
+      params[:query]%>
+      <%# <button type="submit" class="search-button">Go</button> %>
+      <input type="submit">
     </form>
   </div>
 </div>

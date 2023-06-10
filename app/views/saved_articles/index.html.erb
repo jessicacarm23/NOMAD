@@ -1,5 +1,5 @@
 <h1>Saved articles</h1>
 <% @saved_articles.each do |article| %>
-  <h3><%= link_to article.title, city_articles_topic_path(article.city, article.topic) %> </h3>
+  <h3><%= link_to article.content, city_articles_topic_path(article.city, article.topic) %> </h3>
   <p><%= article.topic %> </p>
 <% end %>

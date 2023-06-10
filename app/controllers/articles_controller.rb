@@ -10,8 +10,8 @@ class ArticlesController < ApplicationController
 
     @city = params[:city]
     @topic = params[:topic]
-    @articles = Article.where(city: @city.capitalize, topic: @topic.capitalize)
-
+    # @articles = Article.where(city: @city, topic: @topic) #conflict this is active record search- more limited
+    @articles = Article.search_by_city(@city)
   end
 
   def show
@@ -23,4 +23,11 @@ class ArticlesController < ApplicationController
     @articles = Article.where(topic: @topic)
   end
 
+  def index
+    if params[:query].present?
+      @articles = Article.search_by_city(@city)
+    else
+    @articles = Article.all
+    end
+  end
 end
