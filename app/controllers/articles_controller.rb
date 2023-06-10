@@ -1,9 +1,10 @@
 class ArticlesController < ApplicationController
   def topic
+
     @city = params[:city]
     @topic = params[:topic]
-    raise
-    @articles = Article.where(city: @city, topic: @topic)
+    @articles = Article.where(city: @city.capitalize, topic: @topic.capitalize)
+
   end
 
   def show
