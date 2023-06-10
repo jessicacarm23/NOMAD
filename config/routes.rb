@@ -4,13 +4,6 @@ Rails.application.routes.draw do
 
   # get "/Home", to: "pages#home"
   # get "/:city", to: "pages#show"
-
-  resources :articles do
-    member do
-      post 'toggle_favorite', to: "articles#toggle_favorite"
-    end
-  end
-
 #   resources :saved_articles, only: [:create, :index, :destroy]
 #   resources :chat_rooms, only: [:create, :show, :destroy]
 #   resources :users, only: [:edit]
@@ -18,9 +11,11 @@ Rails.application.routes.draw do
 
   get "/Home", to: "pages#home"
   get "/Home?query=:city", to: "pages#city"
-  get "/:city", to: "pages#city"
-  resources :article, only: [:show, :new, :create, :index, :destroy]
   resources :saved_articles, only: [:create, :index, :destroy]
+
+  get "/:city", to: "pages#city"
+  get "article/:article_id/favorite", to: "articles#favorite", as: "article_favorite"
+  resources :article, only: [:show, :new, :create, :index, :destroy]
   resources :chat_rooms, only: [:create, :show, :destroy]
 
   resources :users, only: [:edit, :index]
