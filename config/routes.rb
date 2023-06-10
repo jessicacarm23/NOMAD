@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 #   resources :users, only: [:edit]
 #   get "cities/:city/articles/topics", to: "articles#topic"
 
-  get "/Home", to: "pages#home"
-  get "/Home?query=:city", to: "pages#city"
+  # get "/Home", to: "pages#home"
+  get "/city/:city", to: "pages#city"
   resources :saved_articles, only: [:create, :index, :destroy]
 
   get "/:city", to: "pages#city"

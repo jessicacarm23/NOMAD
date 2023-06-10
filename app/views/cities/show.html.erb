@@ -74,8 +74,9 @@ end
 <% @topics.each do |topic| %>
  <% unless @city_articles.where(topic: topic).empty? %>
   <div class="card mb-3">
-    <h1><%= topic %></h1>
+
     <% @city_articles.where(topic: topic).each do |article| %>
+    <h1><%= link_to topic, city_articles_topic_path(article.city, topic) %></h1>
      <p><%= article.content %></p>
     <% end %>
   </div>
