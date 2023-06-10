@@ -1,3 +1,5 @@
+<%
+=begin%>
 
 <%= @city %>
 <% @topics.each do |topic, count| %>
@@ -61,3 +63,43 @@
     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
   </div>
 </div>
+<%
+=end%>
+
+
+<%= @city %>
+
+<% @topic.each do |topic, count| %>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title"><%= topic %></h5>
+      <p class="card-text">(no. of articles: <%= count %>)</p>
+      <%= link_to 'Topic', show.html.erb(topic) %>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title"><%= topic %></h5>
+      <p class="card-text">(no. of articles: <%= count %>)</p>
+      <%= link_to 'Topic', show.html.erb(topic) %>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title"><%= topic %></h5>
+      <p class="card-text">(no. of articles: <%= count %>)</p>
+      <%= link_to 'Topic', show.html.erb(topic) %>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title"><%= topic %></h5>
+      <p class="card-text">(no. of articles: <%= count %>)</p>
+      <%= link_to 'Topic', show.html.erb(topic) %>
+    </div>
+  </div>
+<% end %>

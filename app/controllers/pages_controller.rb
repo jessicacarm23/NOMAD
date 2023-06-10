@@ -10,6 +10,8 @@ class PagesController < ApplicationController
   #   @city = params[:city]
   # end
 
-  def profile
+  def city
+    @city = params[:city]
+    @topics = Article.where(city: @city).distinct.pluck(:topic)
   end
 end
