@@ -1,43 +1,37 @@
 
 <%= @city %>
 
+<% @topics.each do |topic, count| %>
 
- <style>
-  .card-img-top {
-    width: 550px;
-    height: 250px;
-  }
-
-  .card_mb-3 {
-    position: center;
-  }
-</style>
-
-
-<div class="card_mb-3">
-  <%= image_tag ('170623115234-heathrow-getty.jpeg'), class: 'card-img-top', alt: '...' %>
-  <div class="card-body">
-    <h5 class="card-title">Getting Here</h5>
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title"><%= topic %></h5>
+      <p class="card-text">(no. of articles: <%= count %>)</p>
+      <%= link_to 'Topic', show.html.erb(topic) %>
+    </div>
   </div>
-</div>
 
-<div class="card_mb-3">
-  <%= image_tag '20stories-restaurant.jpeg', class: "card-img-top", alt: "..." %>
-  <div class="card-body">
-    <h5 class="card-title">Experiences</h5>
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title"><%= topic %></h5>
+      <p class="card-text">(no. of articles: <%= count %>)</p>
+      <%= link_to 'Topic', show.html.erb(topic) %>
+    </div>
   </div>
-</div>
 
-<div class="card_mb-3">
-  <%= image_tag '38906104_1200x400.jpeg', class: "card-img-top", alt: "..."%>
-  <div class="card-body">
-    <h5 class="card-title">Visas</h5>
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title"><%= topic %></h5>
+      <p class="card-text">(no. of articles: <%= count %>)</p>
+      <%= link_to 'Topic', show.html.erb(topic) %>
+    </div>
   </div>
-</div>
 
-<div class="card_mb-3">
-  <%= image_tag '8f0c1de3-aa1f-49a1-a5f7-32323feea301.jpeg', class: "card-img-top", alt: "..."%>
-  <div class="card-body">
-    <h5 class="card-title">Getting Around</h5>
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title"><%= topic %></h5>
+      <p class="card-text">(no. of articles: <%= count %>)</p>
+      <%= link_to 'Topic', show.html.erb(topic) %>
+    </div>
   </div>
-</div>
+<% end %>
