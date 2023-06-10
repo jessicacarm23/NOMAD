@@ -1,4 +1,11 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: :toggle_favorite
+  def toggle_favorite
+    @article = Article.find_by(id: params[:id])
+    # current_user.favorited?(@article)  ?
+    # current_user.unfavorite(@article) : current_user.favorite(@article)ex
+  end
+
   def topic
 
     @city = params[:city]

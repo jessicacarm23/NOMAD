@@ -10,9 +10,10 @@ class User < ApplicationRecord
 pg_search_scope :search_by_city,
   against: [ :city ],
   using: {
-    tsearch: { prefix: true } 
+    tsearch: { prefix: true }
   }
   has_many :articles, dependent: :destroy
   has_many :saved_articles
   has_many :messages
+  acts_as_favoritor
 end
