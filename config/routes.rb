@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :saved_articles, only: [:create, :index, :destroy]
   resources :chat_rooms, only: [:create, :show, :destroy]
   resources :users, only: [:edit, :index]
-  get ":city/articles/topics", to: "articles#topic", as: "city_articles_topic"
+  get ":city/articles/:topic", to: "articles#topic", as: "city_articles_topic"
 
   get "/profile", to: "pages#profile"
   get "cities/:city", to: "cities#show"
