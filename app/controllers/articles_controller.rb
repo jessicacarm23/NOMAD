@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
 
+
   def topic
     @city = params[:city]
     @topic = params[:topic]
@@ -20,3 +21,4 @@ class ArticlesController < ApplicationController
   end
 
 end
+
