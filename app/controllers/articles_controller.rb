@@ -23,12 +23,11 @@ class ArticlesController < ApplicationController
     @articles = Article.where(topic: @topic)
   end
 
-# def search_by_city
-#   @articles = Article.all
-# end
-
   def index
+    if params[:query].present?
+      @articles = Article.search_by_city(@city)
+    else
     @articles = Article.all
+    end
   end
-
 end
