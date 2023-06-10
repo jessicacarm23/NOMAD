@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   def city
     @city = params[:city]
     @topics = Article.where(city: @city.capitalize).distinct.pluck(:topic)
-    @articles = Article.where(city: @city)
+    @articles = Article.where(city: @city.capitalize)
   end
 end
