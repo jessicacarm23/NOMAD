@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+
+  # get "/Home", to: "pages#home"
+  # get "/:city", to: "pages#show"
+#   resources :saved_articles, only: [:create, :index, :destroy]
+#   resources :chat_rooms, only: [:create, :show, :destroy]
+#   resources :users, only: [:edit]
+#   get "cities/:city/articles/topics", to: "articles#topic"
+
   get "/Home", to: "pages#home"
   get "/Home?query=:city", to: "pages#city"
-  get "/:city", to: "pages#city"
-  resources :article, only: [:show, :new, :create, :index, :destroy]
   resources :saved_articles, only: [:create, :index, :destroy]
+
+  get "/:city", to: "pages#city"
+  get "article/:article_id/favorite", to: "articles#favorite", as: "article_favorite"
+  resources :article, only: [:show, :new, :create, :index, :destroy]
   resources :chat_rooms, only: [:create, :show, :destroy]
 
   resources :users, only: [:edit, :index]
@@ -17,4 +27,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
 end
