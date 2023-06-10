@@ -16,9 +16,5 @@ class ArticlesController < ApplicationController
     @articles = Article.where(topic: @topic)
   end
 
-  def
-    @topic = Topic.find(params[:id])
-  end
 
 end
-
