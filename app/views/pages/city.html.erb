@@ -1,12 +1,16 @@
 
 
   <%= @city %>
-  <%= @topics.inspect %>
 
   <% @topics.each do |topic, count| %>
     <div class="card text-center">
       <div class="card-body">
-        <h5 class="card-title"><%= topic %></h5>
+        <h5 class="card-title"><%= link_to topic, 'articles#topic' %></h5>
+            <% @articles.each do |article| %>
+              <div>
+                <%= article.content %>
+              </div>
+            <% end %>
         <p class="card-text">(no. of articles: <%= count %>)</p>
       </div>
     </div>

@@ -25,10 +25,10 @@ user_4 = User.create(name: "Edward", passport: "Netherlands", email: "Edward@gma
 
 Article.destroy_all
 puts "destroyed all articles"
-  Article.create!(user_id: user_1.id, topic: "Visas", city: "Bogota", content: "easy")
-  Article.create(user_id: user_2.id, topic: "Getting Around", city: "London", content: "easy")
-  Article.create(user_id: user_3.id, topic: "Experiences", city: "Bogota", content: "fun place")
-  Article.create(user_id: user_4.id, topic: "Getting Here", city: "London", content: "super easy to London")
+  Article.create!(user_id: user_1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
+  Article.create(user_id: user_2.id, topic: "Getting Around", city: "London", content: "easy", title: "Easy to get around in London")
+  Article.create(user_id: user_3.id, topic: "Experiences", city: "Bogota", content: "fun place", title: "Bogota is fun")
+  Article.create(user_id: user_4.id, topic: "Getting Here", city: "London", content: "super easy to London", title: "Getting to London")
   # Article.create(topic: "Visas", city: "Bogota", content: "easy")
   # Article.create( topic: "Getting Around", city: "London", content: "easy")
   # Article.create(topic: "Experiences", city: "Bogota", content: "fun place")
