@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   def topic
     @city = params[:city]
     @topic = params[:topic]
+    raise
     @articles = Article.where(city: @city, topic: @topic)
   end
 
