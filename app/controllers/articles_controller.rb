@@ -13,4 +13,5 @@ class ArticlesController < ApplicationController
     @topic = params[:topic]
     @articles = Article.where(topic: @topic)
   end
+
 end
