@@ -1,6 +1,6 @@
 class CitiesController < ApplicationController
   def show
-    @city = params[:city]
-    @topics = Article.group(:topic).count
+    @city_articles = Article.search_by_city(params[:query])
+    @topics = Article.all.distinct.pluck(:topic)
   end
 end
