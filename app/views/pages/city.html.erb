@@ -1,38 +1,13 @@
 
 
-<%= @city %>
+  <%= @city %>
+  <%= @topics.inspect %>
 
-<% @topics.each do |topic, count| %>
-
-  <div class="card text-center">
-    <div class="card-body">
-      <h5 class="card-title"><%= topic %></h5>
-      <p class="card-text">(no. of articles: <%= count %>)</p>
-      <%= link_to 'Topic', show.html.erb(topic) %>
+  <% @topics.each do |topic, count| %>
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title"><%= topic %></h5>
+        <p class="card-text">(no. of articles: <%= count %>)</p>
+      </div>
     </div>
-  </div>
-
-  <div class="card text-center">
-    <div class="card-body">
-      <h5 class="card-title"><%= topic %></h5>
-      <p class="card-text">(no. of articles: <%= count %>)</p>
-      <%= link_to 'Topic', show.html.erb(topic) %>
-    </div>
-  </div>
-
-  <div class="card text-center">
-    <div class="card-body">
-      <h5 class="card-title"><%= topic %></h5>
-      <p class="card-text">(no. of articles: <%= count %>)</p>
-      <%= link_to 'Topic', show.html.erb(topic) %>
-    </div>
-  </div>
-
-  <div class="card text-center">
-    <div class="card-body">
-      <h5 class="card-title"><%= topic %></h5>
-      <p class="card-text">(no. of articles: <%= count %>)</p>
-      <%= link_to 'Topic', show.html.erb(topic) %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
