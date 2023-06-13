@@ -15,8 +15,21 @@
 
 
 
-
-<div class="image-container">
+<%
+=begin%>
+ <div class="image-container" >
   <%= image_tag "Map.png", alt: 'Map', class: 'responsive-image' %>
-  <div id="map"></div>
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
+<%
+=end%>
+
+  <div style="width: 600px; height: 500px; background-image: <%= image_tag "Map.png", alt: 'Map', class: 'responsive-image' %>"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
