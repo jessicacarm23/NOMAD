@@ -40,14 +40,14 @@ cities = [
   )
 end
 
-Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
-Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
-Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
-Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
-Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
-Article.create!(user_id: user1.id, topic: "Where to stay", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
-Article.create!(user_id: user1.id, topic: "Where to stay", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
-Article.create!(user_id: user1.id, topic: "Where to stay", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
+# Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
+# Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
+# Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
+# Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
+# Article.create!(user_id: user1.id, topic: "Visas", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
+# Article.create!(user_id: user1.id, topic: "Where to stay", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
+# Article.create!(user_id: user1.id, topic: "Where to stay", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
+# Article.create!(user_id: user1.id, topic: "Where to stay", city: "Bogota", content: "easy", title: "Easy Visa in Bogota")
 
 
 topics = ["Visas", "Where to Stay", "Getting Around"]

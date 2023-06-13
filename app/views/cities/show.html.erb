@@ -1,8 +1,12 @@
 <% if @city_articles.any? %>
-  <h1><%= @city_name.capitalize %></h1>
+  <h1 class="text-center"><%= @city_name.capitalize %></h1>
 <% else %>
-  <h1>No articles found for <%= @city_name.capitalize %>.</h1>
+  <div class="pop-out">
+    <h1>It looks like there are no Digital Nomads in <%= @city_name.capitalize %>. Be the first one!</h1>
+    <%= image_tag('ak.png', alt: 'No Digital Nomads') %>
+  </div>
 <% end %>
+
 
 <% @topics.each do |topic| %>
   <% articles_by_topic = @city_articles.where(topic: topic) %>
@@ -36,3 +40,5 @@
     </div>
   <% end %>
 <% end %>
+
+<%= stylesheet_link_tag 'cities' %>
