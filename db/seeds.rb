@@ -116,126 +116,132 @@ def generate_content4(topic, city)
   end
 end
 
-def generate_articles1(cities, topic, user)
-  cities.each do |city|
+def generate_articles1(city, topic, user)
     puts city,
     case topic
     when "Visas"
       Article.create!(
+        city: city,
         title: "#{city}: A Hassle-Free Visa Experience",
         content: generate_content1(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     when "Where to Stay"
       Article.create!(
+        city: city,
         title: "Best Accommodations in #{city}",
         content: generate_content1(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     when "Getting Around"
       Article.create!(
+        city: city,
         title: "Getting Around #{city}: Transportation Guide",
         content: generate_content1(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     end
-  end
 end
 
-def generate_articles2(cities, topic)
-  cities.each do |city|
+def generate_articles2(city, topic, user)
     case topic
     when "Visas"
       Article.create!(
+        city: city,
         title: "#{city}: Smooth Visa Procedures",
         content: generate_content2(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     when "Where to Stay"
       Article.create!(
+        city: city,
         title: "Where to Stay in #{city}",
         content: generate_content2(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     when "Getting Around"
       Article.create!(
+        city: city,
         title: "Transportation Tips for #{city}",
         content: generate_content2(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     end
-  end
 end
 
-def generate_articles3(cities, topic)
-  cities.each do |city|
+def generate_articles3(city, topic, user)
     case topic
     when "Visas"
       Article.create!(
+        city: city,
         title: "#{city}: Seamless Visa Application Process",
         content: generate_content3(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     when "Where to Stay"
       Article.create!(
+        city: city,
         title: "Choosing the Perfect Accommodation in #{city}",
         content: generate_content3(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     when "Getting Around"
       Article.create!(
+        city: city,
         title: "#{city}: A Guide to Public Transportation",
         content: generate_content3(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     end
-  end
 end
 
-def generate_articles4(cities, topic)
-  cities.each do |city|
+def generate_articles4(city, topic, user)
     case topic
     when "Visas"
       Article.create!(
+        city: city,
         title: "#{city}: Easy Visa Application",
         content: generate_content4(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     when "Where to Stay"
       Article.create!(
+        city: city,
         title: "Accommodation Guide: Where to Stay in #{city}",
         content: generate_content4(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     when "Getting Around"
       puts "#{city}",
       Article.create!(
+        city: city,
         title: "#{city} Transportation Guide: Getting Around with Ease",
         content: generate_content4(topic, city),
         topic: topic,
-        user_id: User.all.sample.id
+        user_id: user.id
       )
     end
-  end
 end
 
 def generate_articles(cities, topics, user)
-  topics.each do |topic|
-    generate_articles1(cities, topic, user)
-    # generate_articles2(cities, topic)
-    # generate_articles3(cities, topic)
-    # generate_articles4(cities, topic)
+  cities.each do |city|
+    topics.each do |topic|
+      generate_articles1(city, topic, user)
+      generate_articles2(city, topic, user)
+      generate_articles3(city, topic, user)
+      generate_articles4(city, topic, user)
+    end
   end
 end
 
