@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_10_134146) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_13_183744) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_134146) do
     t.index ["scope"], name: "index_favorites_on_scope"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chat_room_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "pg_search_documents", force: :cascade do |t|
     t.text "content"
     t.string "searchable_type"
@@ -84,6 +94,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_134146) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "saved_articles", "articles"
   add_foreign_key "saved_articles", "users"
 end

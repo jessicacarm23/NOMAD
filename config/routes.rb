@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   # get "/Home", to: "pages#home"
   get "/city/:city", to: "pages#city"
   resources :saved_articles, only: [:create, :index, :destroy]
-
+  resources :chat_rooms, only: [:create, :show, :destroy]
   get "/:city", to: "pages#city"
   get "article/:article_id/favorite", to: "articles#favorite", as: "article_favorite"
   resources :article, only: [:show, :new, :create, :index, :destroy]
-  resources :chat_rooms, only: [:create, :show, :destroy]
+
 
   resources :users, only: [:edit, :index]
   get ":city/articles/:topic", to: "articles#topic", as: "city_articles_topic"
