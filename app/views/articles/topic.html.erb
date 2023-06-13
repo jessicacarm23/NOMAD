@@ -1,19 +1,38 @@
-<style>
+<%# <style>
   .topic-header {
     color: rgb(204, 85, 0);
     font-family: "Corsiva", cursive;
   }
-</style>
+</style> %>
 
-<h1 class="topic-header">Articles for <%= @city %> - <%= @topic %></h1>
+<h1 class="topic-header"> <%= @city.capitalize %> - <%= @topic %></h1>
 
 <div class="card-container">
-  <% @articles.each do |article| %>
-    <div class="card">
-      <h2><%= article.title %></h2>
-      <p><%= article.content %></p>
-      <% favorited = current_user.favorited?(article) %>
-      <%= link_to favorited ? "Unfavorite" : "Favorite", article_favorite_path(article) %>
+  <% @articles.each_slice(4) do |article_slice| %>
+    <div class="row">
+      <% article_slice.each do |article| %>
+        <div class="col-md-3">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h3 class="text-center text-bold text-orange">
+                <%= article.title %>
+              </h3>
+              <p class="text-center"><%= article.content %></p>
+              <div class="text-center">
+                <% favorited = current_user.favorited?(article) %>
+                <%# <%= link_to favorited ? "Unfavorite" : "Favorite", article_favorite_path(article) %>
+                <%= link_to article_favorite_path(article), class: "text-center" do %>
+                  <% if favorited %>
+                    <i class="fas fa-heart"></i>
+                  <% else %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
