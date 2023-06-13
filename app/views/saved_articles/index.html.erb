@@ -1,5 +1,25 @@
-<h1>Saved articles</h1>
-<% @saved_articles.each do |article| %>
-  <h3><%= link_to article.content, city_articles_topic_path(article.city, article.topic) %> </h3>
-  <p><%= article.topic %> </p>
-<% end %>
+<h1 class="text-center">Saved articles</h1>
+<div class="card-container">
+  <div class="row">
+    <% @saved_articles.each_slice(4) do |articles_batch| %>
+      <div class="col-md-3">
+        <% articles_batch.each do |article| %>
+          <div class="card text-center">
+            <h3><%= link_to article.content, city_articles_topic_path(article.city, article.topic) %></h3>
+            <p><%= article.topic %></p>
+            <div class="text-center">
+              <% favorited = current_user.favorited?(article) %>
+              <%= link_to article_favorite_path(article) do %>
+                <% if favorited %>
+                  <i class="fas fa-heart"></i>
+                <% else %>
+                  <i class="far fa-heart"></i>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
