@@ -1,5 +1,8 @@
 <h1>New Article</h1>
 <%= simple_form_for [@article] do |f| %>
-  <%= f.input :content %>
+  <%= f.input :city %>
+   <%= f.input :title %>
+    <%= f.input :content %>
+   <%= f.input :topic, as: :select, collection: ["Visas", "Where to Stay", "Getting Around"], prompt: 'Select Topic'%>
   <%= f.submit "Submit article", class: "btn btn-primary" %>
 <% end %>
