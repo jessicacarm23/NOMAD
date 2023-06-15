@@ -17,11 +17,6 @@ export default class extends Controller {
   }
 }
 
-connect() {
-  // [...]
-  this.#addMarkersToMap()
-}
-
 #addMarkersToMap() {
   this.markersValue.forEach((marker) => {
     new mapboxgl.Marker()
