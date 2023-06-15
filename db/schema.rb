@@ -22,6 +22,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_193524) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
