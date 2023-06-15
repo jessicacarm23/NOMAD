@@ -1,7 +1,8 @@
-<h1 class="topic-header"> <%= @city.capitalize %> - <%= @topic %></h1>
+<h1 class="topic-header text-center text-bold"> <%= @city.capitalize %> - <%= @topic %></h1>
+
 
 <div class="card-container">
-  <% @articles.each_slice(4) do |article_slice| %>
+  <% @articles.where(topic: @topic).each_slice(4) do |article_slice| %>
     <div class="row">
       <% article_slice.each do |article| %>
         <div class="col-md-3">

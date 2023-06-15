@@ -1,0 +1,41 @@
+<h1 class="topic-header"><%= @city.capitalize %> - <%= @topic %></h1>
+
+<div class="card-container">
+  <% @articles.where(topic: @topic).each do |article| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h3 class="text-center text-bold text-orange" data-toggle="modal" data-target="#articleModal-<%= article.id %>">
+          <%= article.title %>
+        </h3>
+        <p class="text-center"><%= article.content %></p>
+        <div class="text-center">
+          <% favorited = current_user.favorited?(article) %>
+          <%= link_to article_favorite_path(article), class: "text-center" do %>
+            <% if favorited %>
+              <i class="fas fa-heart"></i>
+            <% else %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Modal -->
+    <div class="modal fade" id="articleModal-<%= article.id %>" tabindex="-1" role="dialog" aria-labelledby="articleModalLabel-<%= article.id %>" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="articleModalLabel-<%= article.id %>"><%= article.title %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p><%= article.content %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
