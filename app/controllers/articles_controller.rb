@@ -30,4 +30,34 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     end
   end
+
+  # ---------create a new article and define by city--------
+  def new
+    @article = Article.find(params[:city]) #should it find by city?
+    @article = Article.new
+  end
+
+
+
+  before_action :set_city, only: %i[new create] #if there is no city table?
+
+  def create
+    @article = Article.new(review_params)
+    @article.city = @city
+    @article.save
+    redirect_to article_path(@article)
+  end
+
+  private
+
+  def set_city
+    @article = Article.find(params[:city])
+  end
+
+  def review_params
+    params.require(:article).permit(:content) #permit title and topic?
+  end
+end
+
+
 end

@@ -28,5 +28,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # -------route for creating an article-------
+  get "/:city/articles/new", to "articles#new"
+  get "/articles", to "articles#create"
 
 end
