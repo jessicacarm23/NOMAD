@@ -5,9 +5,11 @@
       <div class="col-md-3">
         <% articles_batch.each do |article| %>
           <div class="card text-center">
-            <h3><%= link_to article.content, city_articles_topic_path(article.city, article.topic) %></h3>
-            <p><%= article.topic %></p>
+          <h3 class="text-center text-bold text-orange">
+           <h1><%= article.topic %> in <%= article.city %> </h1>
+            <%= article.title %>
             <div class="text-center">
+            <p class="text-center"><%= article.content %></p>
               <% favorited = current_user.favorited?(article) %>
               <%= link_to article_favorite_path(article) do %>
                 <% if favorited %>
