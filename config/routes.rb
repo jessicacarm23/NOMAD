@@ -32,5 +32,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # -------route for creating an article-------
+  get "/articles/new", to: "articles#new"
+  post "/articles", to: "articles#create"
 
 end

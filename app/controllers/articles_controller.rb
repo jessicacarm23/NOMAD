@@ -32,6 +32,7 @@ class ArticlesController < ApplicationController
   end
 
 
+
   def map_index
     @articles = Article.all
     @markers = @articles.geocoded.map do |city|
@@ -41,5 +42,24 @@ class ArticlesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: { city: city })
       }
     end
+
+  # ---------create a new article and define by city--------
+  def new
+    @article = Article.new
+  end
+
+
+  def create
+    @article = Article.new(article_params)
+    @article.user = current_user
+    @article.save
+    redirect_to(controller: 'cities', action: 'show', query: @article.city)
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:content, :title, :city, :topic)
+
   end
 end
