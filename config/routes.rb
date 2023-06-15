@@ -24,6 +24,9 @@ Rails.application.routes.draw do
 
   get "/profile", to: "pages#profile"
   get "cities/search", to: "cities#show"
+
+  get '/map_image', to: 'cities_controller#map_image'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
