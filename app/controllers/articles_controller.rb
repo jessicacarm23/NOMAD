@@ -7,7 +7,6 @@ class ArticlesController < ApplicationController
   end
 
   def topic
-
     @city = params[:city]
     @topic = params[:topic]
     # @articles = Article.where(city: @city, topic: @topic) #conflict this is active record search- more limited
@@ -27,7 +26,17 @@ class ArticlesController < ApplicationController
     if params[:query].present?
       @articles = Article.search_by_city(@city)
     else
+      @articles = Article.all
+    end
+  end
+
+  def map
     @articles = Article.all
+    @markers = @articles.geocoded.map do |city|
+      {
+        lat: city.latitude,
+        lng: city.longitude,
+      }
     end
   end
 
@@ -35,7 +44,6 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
-
 
   def create
     @article = Article.new(article_params)

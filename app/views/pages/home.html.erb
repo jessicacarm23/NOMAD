@@ -1,5 +1,3 @@
-
-
 <div class="image-container">
   <%= image_tag "Nomad.png", alt: 'Postcard', class: 'responsive-image' %>
   <div class="search-bar">
@@ -11,25 +9,7 @@
       <input type="submit">
     </form>
   </div>
-</div>
-
-
-
-<%
-=begin%>
- <div class="image-container" >
-  <%= image_tag "Map.png", alt: 'Map', class: 'responsive-image' %>
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div>
+  <%= link_to 'Show Map', map_path, class: 'btn btn-dark'%>
   </div>
 </div>
-<%
-=end%>
-
-  <div style="width: 600px; height: 500px; background-image: <%= image_tag "Map.png", alt: 'Map', class: 'responsive-image' %>"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
