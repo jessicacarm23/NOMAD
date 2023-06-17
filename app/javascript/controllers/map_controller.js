@@ -25,7 +25,7 @@ export default class extends Controller {
         .addTo(this.map);
       // Open the corresponding show.html.erb file when the marker is clicked
       element.addEventListener('click', () => {
-        window.location.href = `show.html.erb`;
+        window.location.href = `/articles/${marker.id}`;
       });
     });
   }

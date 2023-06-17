@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get ":city/articles/:topic", to: "articles#topic", as: "city_articles_topic"
 
 
-  get "/profile", to: "pages#profile"
+  get "/profile/:id", to: "pages#profile", as: 'profile'
   get "cities/search", to: "cities#show"
 
   get '/map_image', to: 'cities_controller#map_image'
@@ -43,5 +43,4 @@ Rails.application.routes.draw do
   # -------route for creating an article-------
   get "/articles/new", to: "articles#new"
   post "/articles", to: "articles#create"
-
 end

@@ -11,4 +11,9 @@ class PagesController < ApplicationController
     @topic = params[:topic]
     @articles = Article.where(city: @city, topic: @topic)
   end
+
+  def profile
+    @id = params[:id]
+    @user = User.find_by(id: @id)
+  end
 end
