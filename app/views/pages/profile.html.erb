@@ -1,3 +1,64 @@
 <h1>test profile</h1>
 
+<%= @user.name %>
 <%= @user.email %>
+<%= @user.passport %>
+<%= @user.city %>
+<%= @user.bio %>
+
+
+<head>
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .profile {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .profile .field {
+      margin-bottom: 15px;
+    }
+
+    .profile .field strong {
+      display: inline-block;
+      width: 100px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <h1><%= @user.name %>'s Profile</h1>
+
+    <div class="field">
+      <strong>Email:</strong> <%= @user.email %>
+    </div>
+
+    <div class="field">
+      <strong>Passport:</strong> <%= @user.passport %>
+    </div>
+
+    <div class="field">
+      <strong>City:</strong> <%= @user.city %>
+    </div>
+
+    <div class="field">
+      <strong>Bio:</strong> <%= @user.bio %>
+    </div>
+  </div>
+</body>
+</html>
