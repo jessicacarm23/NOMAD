@@ -7,7 +7,6 @@
   </div>
 <% end %>
 
-
 <% @topics.each do |topic| %>
   <% articles_by_topic = @city_articles.where(topic: topic) %>
   <% unless articles_by_topic.empty? %>
@@ -24,8 +23,8 @@
               <div class="col-md-3">
                 <div class="card mb-3">
                   <div class="card-body">
-                    <h3 class="text-center text-bold text-orange">
-                      <%= article.title %>
+                    <h3 class="text-center text-bold text-orange" data-toggle="modal" data-target="#articleModal-<%= article.id %>">
+                      <%= link_to article.title, article_path(article) %>
                     </h3>
                     <p class="text-center"><%= truncate(article.content, length: 100) %></p>
                     <div class="text-center">
@@ -42,3 +41,7 @@
 <% end %>
 
 <%= stylesheet_link_tag 'cities' %>
+
+<% @city_articles.each do |article| %>
+  <%= render partial: 'articles/article_modal', locals: { article: article } %>
+<% end %>

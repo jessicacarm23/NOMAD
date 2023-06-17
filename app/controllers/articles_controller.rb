@@ -16,6 +16,8 @@ class ArticlesController < ApplicationController
 
   def show
     @articles = Article.all
+    @article = Article.find(params[:id])
+    @articles_by_topic = Article.where(topic: @topic)
   end
 
   def show_by_topic
@@ -30,4 +32,10 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     end
   end
+
+  def modal
+    @article = Article.find(params[:id])
+    render layout: false
+  end
+
 end
