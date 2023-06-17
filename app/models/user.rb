@@ -14,6 +14,6 @@ pg_search_scope :search_by_city,
   }
   has_many :articles, dependent: :destroy
   has_many :saved_articles
-  has_many :messages
+  has_many :messages, dependent: :destroy
   acts_as_favoritor
 end
