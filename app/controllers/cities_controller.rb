@@ -18,8 +18,6 @@ class CitiesController < ApplicationController
     end
   end
 
-
-
 def map_image
   access_token = 'pk.eyJ1IjoiamFtZXNld2luZzAiLCJhIjoiY2xmbGlreGFrMDJhOTN3cjJ1anVhN2xpYSJ9.gB6KxglmzVc06uUVc2BkFQ'
   style = 'mapbox://styles/mapbox/streets-v11'
