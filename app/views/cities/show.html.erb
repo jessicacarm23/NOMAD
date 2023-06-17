@@ -42,6 +42,61 @@
 
 <%= stylesheet_link_tag 'cities' %>
 
+<%# ------------------------------------------------------ %>
+
+
+<html>
+<head>
+  <title>Connected Users</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .user-list {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-list-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .user-list-item .profile-image {
+      width: 50px;
+      height: 50px;
+      background-color: #000;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .user-list-item .name {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="user-list">
+    <h1>Connected Users</h1>
+
+    <% @users.each do |user| %>
+      <div class="user-list-item">
+        <div class="profile-image"></div>
+        <div class="name"><%= user.name %></div>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>
+<%# ------------------------------------------------------ %>
+
 <% @city_articles.each do |article| %>
   <%= render partial: 'articles/article_modal', locals: { article: article } %>
 <% end %>
