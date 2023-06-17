@@ -13,11 +13,13 @@ Rails.application.routes.draw do
   get '/map', to: 'articles#map', as: 'map'
   get "/city/:city", to: "pages#city"
   resources :saved_articles, only: [:create, :index, :destroy]
-
-  # get "/:city", to: "pages#city"
+  resources :chat_rooms, only: [:create, :show, :destroy] do
+    resources :messages, only: :create
+  end
+  get "/:city", to: "pages#city"
   get "article/:article_id/favorite", to: "articles#favorite", as: "article_favorite"
-  resources :articles, only: [:show, :new, :create, :index, :destroy]
-  resources :chat_rooms, only: [:create, :show, :destroy]
+  resources :article, only: [:show, :new, :create, :index, :destroy]
+
 
   resources :users, only: [:edit, :index]
   get ":city/articles/:topic", to: "articles#topic", as: "city_articles_topic"
