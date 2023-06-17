@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+ChatRoom.destroy_all
+puts "Destroyed all chatrooms"
 
 User.destroy_all
 puts "Destroyed all users"
@@ -22,6 +24,19 @@ user1 = User.create(name: "Jasmine", passport: "French", email: "jasmine@test.co
 user2 = User.create(name: "Bill", passport: "British", email: "bill@gmail.com", city: "Paris", bio: "Kind", password: 'password')
 user3 = User.create(name: "Lisa", passport: "Belgium", email: "lisa@test.com", city: "London", bio: "Something", password: 'password')
 user4 = User.create(name: "Edward", passport: "Netherlands", email: "edward@gmail.com", city: "Paris", bio: "Something", password: 'password')
+
+
+
+# ChatRoom.create(name: "Chatroom something", user_initiator: User.first, user_receiver: User.last)
+ChatRoom.create(name: "hello", user_initiator_id: User.first.id, user_receiver_id: User.last.id)
+ChatRoom.create(name: "something chat room", user_initiator_id: User.first.id, user_receiver_id: User.last.id)
+ChatRoom.create(name: "hello", user_initiator_id: User.first.id, user_receiver_id: User.last.id)
+ChatRoom.create(name: "hello", user_initiator_id: User.first.id, user_receiver_id: User.last.id)
+ChatRoom.create(name: "hello", user_initiator_id: User.first.id, user_receiver_id: User.last.id)
+# interpolate user.name here that you're communicating with into the name of the chat room 
+# ChatRoom.create(name: "Chatroom", user_initiator: User.id, user_receiver: User.id)
+
+# ChatRoom.create(name: "Chatroom something", user_initiator: User.first, user_receiver: User.last)
 
 
 Article.destroy_all
