@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 #   get "cities/:city/articles/topics", to: "articles#topic"
 
   # get "/Home", to: "pages#home"
+  get '/map', to: 'articles#map', as: 'map'
   get "/city/:city", to: "pages#city"
   resources :saved_articles, only: [:create, :index, :destroy]
 
@@ -37,5 +38,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # -------route for creating an article-------
+  get "/articles/new", to: "articles#new"
+  post "/articles", to: "articles#create"
 
 end
