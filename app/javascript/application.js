@@ -2,5 +2,8 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import "bootstrap/js/dist/modal";
 
 
+//= require jquery
+//= require bootstrap
