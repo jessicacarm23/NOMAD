@@ -1,9 +1,23 @@
-<p><strong>Article</strong></p>
 
 
-<%# <ul class="list-group"> %>
-  <%# <% @restaurant.reviews.each do |review| %> %>
-    <%# <li class="list-group-item"><%= review.content %></li> %>
-  <%# <% end %> %>
-<%# </ul>
-<br> %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h3 class="text-center text-bold text-orange">
+                <%= @article.title %>
+              </h3>
+              <p class="text-center"><%= @article.content %></p>
+                    <div class="text-center">
+                    </div>
+              <div class="text-center">
+                <% favorited = current_user.favorited?(@article) %>
+                <%= link_to article_favorite_path(@article), class: "text-center" do %>
+                  <% if favorited %>
+                    <i class="fas fa-heart"></i>
+                  <% else %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+

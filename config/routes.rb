@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # get "/:city", to: "pages#city"
   get "article/:article_id/favorite", to: "articles#favorite", as: "article_favorite"
-  resources :article, only: [:show, :new, :create, :index, :destroy]
+  resources :articles, only: [:show, :new, :create, :index, :destroy]
   resources :chat_rooms, only: [:create, :show, :destroy]
 
   resources :users, only: [:edit, :index]
@@ -27,6 +27,12 @@ Rails.application.routes.draw do
   get "cities/search", to: "cities#show"
 
   get '/map_image', to: 'cities_controller#map_image'
+
+  resources :articles do
+    member do
+      get 'modal', to: 'articles#modal', as: 'modal'
+    end
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
 
   def show
     @articles = Article.all
+    @article = Article.find(params[:id])
+    @articles_by_topic = Article.where(topic: @topic)
   end
 
   def show_by_topic
@@ -40,6 +42,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+
+  def modal
+    @article = Article.find(params[:id])
+    render layout: false
+  end
+
+
   # ---------create a new article and define by city--------
   def new
     @article = Article.new
@@ -57,4 +66,5 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:content, :title, :city, :topic)
   end
+
 end
