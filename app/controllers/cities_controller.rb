@@ -7,19 +7,5 @@ class CitiesController < ApplicationController
     @topics = Article.all.distinct.pluck(:topic)
   end
 
-  def index
-    @cities = City.all
-    # The `geocoded` scope filters only flats with coordinates
-    @markers = @cities.geocoded.map do |city|
-      {
-        lat: city.latitude,
-        lng: city.longitude
-      }
-    end
-  end
-
-
-
-
 
 end
