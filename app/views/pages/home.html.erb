@@ -2,14 +2,9 @@
   <%= image_tag "Nomad.png", alt: 'Postcard', class: 'responsive-image' %>
   <div class="search-bar">
     <form id="search-form" action="/cities/search">
-      <%# <input type="text" name="query" placeholder="Search for a city" class="search-input"> %>
-      <%=text_field_tag :query,
-      params[:query]%>
-      <%# <button type="submit" class="search-button">Go</button> %>
+      <%= text_field_tag :query, params[:query] %>
       <input type="submit">
+      <%= link_to 'Show Map', map_path, class: 'btn btn-dark' %>
     </form>
-  </div>
-  <div>
-  <%= link_to 'Show Map', map_path, class: 'btn btn-dark'%>
   </div>
 </div>
