@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "/city/:city", to: "pages#city"
   resources :saved_articles, only: [:create, :index, :destroy]
 
-  get "/:city", to: "pages#city"
+  # get "/:city", to: "pages#city"
   get "article/:article_id/favorite", to: "articles#favorite", as: "article_favorite"
   resources :articles, only: [:show, :new, :create, :index, :destroy]
   resources :chat_rooms, only: [:create, :show, :destroy]
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get ":city/articles/:topic", to: "articles#topic", as: "city_articles_topic"
 
 
-  get "/profile", to: "pages#profile"
+  get "/profile/:id", to: "pages#profile", as: 'profile'
   get "cities/search", to: "cities#show"
 
   get '/map_image', to: 'cities_controller#map_image'
@@ -41,5 +41,4 @@ Rails.application.routes.draw do
   # -------route for creating an article-------
   get "/articles/new", to: "articles#new"
   post "/articles", to: "articles#create"
-
 end
