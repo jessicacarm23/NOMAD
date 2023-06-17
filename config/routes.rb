@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 #   get "cities/:city/articles/topics", to: "articles#topic"
 
   # get "/Home", to: "pages#home"
+  get '/map', to: 'articles#map', as: 'map'
   get "/city/:city", to: "pages#city"
   resources :saved_articles, only: [:create, :index, :destroy]
   resources :chat_rooms, only: [:create, :show, :destroy] do
@@ -29,9 +30,18 @@ Rails.application.routes.draw do
 
   get '/map_image', to: 'cities_controller#map_image'
 
+  resources :articles do
+    member do
+      get 'modal', to: 'articles#modal', as: 'modal'
+    end
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # -------route for creating an article-------
+  get "/articles/new", to: "articles#new"
+  post "/articles", to: "articles#create"
 
 end
