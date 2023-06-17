@@ -11,7 +11,11 @@ puts "Destroyed all users"
 
 User.create!(
   email: 'test@test.com',
-  password: 'password'
+  password: 'password',
+  name: "Jessica",
+  passport: "Colombian",
+  bio: "I love remote work as a developer",
+  city: "London"
 )
 
 user1 = User.create(name: "Jasmine", passport: "French", email: "jasmine@test.com", city: "London", bio: "A nice person", password: 'password')
