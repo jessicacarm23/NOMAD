@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-
+  # get '/map', to: '/cities/search?query=#city'
   # get "/Home", to: "pages#home"
   # get "/:city", to: "pages#show"
 #   resources :saved_articles, only: [:create, :index, :destroy]
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
 
   get "/profile/:id", to: "pages#profile", as: 'profile'
-  get "cities/search", to: "cities#show"
+  get "cities/search", to: "cities#show", as: :city
 
   get '/map_image', to: 'cities_controller#map_image'
 
