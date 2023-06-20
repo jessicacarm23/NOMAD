@@ -38,7 +38,8 @@ class ArticlesController < ApplicationController
       {
         lat: city.latitude,
         lng: city.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { city: city })
+        city: city.city
+        # info_window_html: render_to_string(partial: "info_window", locals: { city: city })
 
       }
     end
