@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   get "/profile/:id", to: "pages#profile", as: 'profile'
   get "cities/search", to: "cities#show", as: 'city'
-  get 'users/:id', to: 'users#show'
+  get 'users/:id', to: 'users#show', as: 'user'
 
   get '/map_image', to: 'cities_controller#map_image'
 
