@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
   get "/:city", to: "pages#city"
   get "article/:article_id/favorite", to: "articles#favorite", as: "article_favorite"
-  resources :article, only: [:show, :new, :create, :index, :destroy]
+  resources :articles, only: [:show, :new, :create, :index, :destroy]
 
 
   resources :users, only: [:edit, :index]

@@ -86,3 +86,6 @@ gem "pg_search"
 gem "geocoder"
 
 gem 'httparty'
+
+gem 'activestorage'
+

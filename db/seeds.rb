@@ -20,12 +20,14 @@ User.create!(
   city: "London"
 )
 
-user1 = User.create(name: "Jasmine", passport: "French", email: "jasmine@test.com", city: "London", bio: "A nice person", password: 'password')
-user2 = User.create(name: "Bill", passport: "British", email: "bill@gmail.com", city: "Paris", bio: "Kind", password: 'password')
-user3 = User.create(name: "Lisa", passport: "Belgium", email: "lisa@test.com", city: "London", bio: "Something", password: 'password')
-user4 = User.create(name: "Edward", passport: "Netherlands", email: "edward@gmail.com", city: "Paris", bio: "Something", password: 'password')
+user1 = User.create(name: "Hailey", passport: "French", email: "jasmine@test.com", city: "Bogota", bio: "A nice person", password: 'password')
+user2 = User.create(name: "Harry", passport: "British", email: "bill@gmail.com", city: "Bogota", bio: "Kind", password: 'password')
+user3 = User.create(name: "Megan", passport: "Belgium", email: "lisa@test.com", city: "Bogota", bio: "Something", password: 'password')
+# user4 = User.create(name: "Edward", passport: "Netherlands", email: "edward@gmail.com", city: "Bogota", bio: "Something", password: 'password')
 
-
+user1.profile_picture.attach(io: File.open(Rails.root.join("app", "assets", "images", "p1.png")), filename: "p1.png")
+user2.profile_picture.attach(io: File.open(Rails.root.join("app", "assets", "images", "p2.png")), filename: "p2.png")
+user3.profile_picture.attach(io: File.open(Rails.root.join("app", "assets", "images", "p3.png")), filename: "p3.png")
 
 # ChatRoom.create(name: "Chatroom something", user_initiator: User.first, user_receiver: User.last)
 ChatRoom.create(name: "hello", user_initiator_id: User.first.id, user_receiver_id: User.last.id)
@@ -33,7 +35,7 @@ ChatRoom.create(name: "something chat room", user_initiator_id: User.first.id, u
 ChatRoom.create(name: "hello", user_initiator_id: User.first.id, user_receiver_id: User.last.id)
 ChatRoom.create(name: "hello", user_initiator_id: User.first.id, user_receiver_id: User.last.id)
 ChatRoom.create(name: "hello", user_initiator_id: User.first.id, user_receiver_id: User.last.id)
-# interpolate user.name here that you're communicating with into the name of the chat room 
+# interpolate user.name here that you're communicating with into the name of the chat room
 # ChatRoom.create(name: "Chatroom", user_initiator: User.id, user_receiver: User.id)
 
 # ChatRoom.create(name: "Chatroom something", user_initiator: User.first, user_receiver: User.last)
@@ -48,12 +50,18 @@ cities = [
   "San Francisco", "Dublin", "Athens", "Seoul", "Lisbon", "Vienna", "Stockholm", "Prague", "Budapest", "Istanbul"
 ]
 
+cities_for_user = [
+  "London", "Paris", "New York", "Tokyo", "Sydney", "Rome", "Dubai", "Barcelona", "Rio de Janeiro",
+  "Amsterdam", "Berlin", "Cairo", "Bangkok", "Hanoi", "Mumbai", "Cape Town", "Moscow", "Toronto", "Los Angeles",
+  "San Francisco", "Dublin", "Athens", "Seoul", "Lisbon", "Vienna", "Stockholm", "Prague", "Budapest", "Istanbul"
+]
+
 26.times do
   User.create!(
     name: Faker::Name.unique.name,
     passport: Faker::Address.country,
     email: Faker::Internet.unique.email,
-    city: cities.sample,
+    city: cities_for_user.sample,
     bio: Faker::Lorem.sentence,
     password: 'password'
   )
