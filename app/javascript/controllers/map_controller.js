@@ -15,17 +15,21 @@ export default class extends Controller {
      this.#fitMapToMarkers()
   }
   #addMarkersToMap() {
+    console.log("here")
     this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML("hi");
-      const element = document.createElement('div');
-      element.className = 'marker';
-      const markerObj = new mapboxgl.Marker(element)
+      // const popup = new mapboxgl.Popup().setHTML();
+      // const element = document.createElement('div');
+      // element.className = 'marker'
+      const setMarker = new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
+        // .setPopup(popup)
         .addTo(this.map);
       // Open the corresponding show.html.erb file when the marker is clicked
-      element.addEventListener('click', () => {
-        window.location.href = `/articles/${marker.id}`;
+      const selectedMarker = document.querySelector("marker")
+      // console.log(setMarker.getElement())
+      // console.log(marker.id)
+      setMarker.getElement().addEventListener('click', () => {
+        window.location.href = `/cities/search?query=${marker.city}`;
       });
     });
   }
