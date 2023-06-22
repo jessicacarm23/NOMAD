@@ -89,7 +89,7 @@
         <% @users.each do |user| %>
           <% if user.city.downcase == @city_name.downcase %>
             <div class="user-list-item">
-                <% if user.profile_picture.attached? %>
+                <% if user.profile_picture %>
                   <%= image_tag(user.profile_picture, class: "profile-picture", style: "width: 100px; height: 100px;") %>
                 <% else %>
                   <%= image_tag("p1.png", class: "profile-picture", style: "width: 100px; height: 100px;") %>
