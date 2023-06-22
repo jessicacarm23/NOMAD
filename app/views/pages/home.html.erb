@@ -4,7 +4,10 @@
     <form id="search-form" action="/cities/search">
       <%= text_field_tag :query, params[:query] %>
       <input type="submit">
-      <%= link_to 'Show Map', map_path, class: 'btn btn-dark' %>
     </form>
+  </div>
+    <div>
+      <%= link_to 'Show Map', map_path, class: 'btn btn-dark' %>
+    </div>
   </div>
 </div>
