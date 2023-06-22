@@ -1,13 +1,17 @@
-<div class="image-container">
-  <%= image_tag "Nomad.png", alt: 'Postcard', class: 'responsive-image' %>
+<div class="main-container">
+  <div class="image-container">
+    <%= image_tag "Nomad.png", alt: 'Postcard', class: 'responsive-image' %>
+  </div>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <!-- Your navbar code here -->
+  </div>
   <div class="search-bar">
     <form id="search-form" action="/cities/search">
-      <%= text_field_tag :query, params[:query] %>
-      <input type="submit">
+      <%= text_field_tag :query, params[:query], class: 'search-input' %>
+      <input type="submit" value="Search" class="search-button">
     </form>
   </div>
-    <div>
-      <%= link_to 'Show Map', map_path, class: 'btn btn-dark' %>
-    </div>
+  <div class="map-button">
+    <%= link_to 'Show Map', map_path, class: 'btn btn-dark' %>
   </div>
 </div>
