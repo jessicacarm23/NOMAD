@@ -68,6 +68,9 @@
 </head>
 <body>
   <a href="#" class="orange-button">Message #{@user.name}</a>
+    <%# <a href="#" class="orange-button">Message #{@user.name}</a> %>
 
+<%= button_to "Message #{@user.name}", user_chat_rooms_path(@user, @chatroom) %>
 </body>
 </html>
+  <%# <%= link_to "contact user", chat_rooms_path(@chatroom)%>
