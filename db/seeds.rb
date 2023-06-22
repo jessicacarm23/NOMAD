@@ -21,8 +21,8 @@ User.create!(
 )
 
 user1 = User.create(name: "Hailey", passport: "French", email: "jasmine@test.com", city: "Bogota", bio: "A nice person", password: 'password')
-user2 = User.create(name: "Harry", passport: "British", email: "bill@gmail.com", city: "Bogota", bio: "Kind", password: 'password')
-user3 = User.create(name: "Megan", passport: "Belgium", email: "lisa@test.com", city: "Bogota", bio: "Something", password: 'password')
+user2 = User.create(name: "Harry", passport: "British", email: "bill@gmail.com", city: "Bogota", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password')
+user3 = User.create(name: "Megan", passport: "USA", email: "lisa@test.com", city: "Bogota", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password')
 # user4 = User.create(name: "Edward", passport: "Netherlands", email: "edward@gmail.com", city: "Bogota", bio: "Something", password: 'password')
 
 user1.profile_picture.attach(io: File.open(Rails.root.join("app", "assets", "images", "p1.png")), filename: "p1.png")
