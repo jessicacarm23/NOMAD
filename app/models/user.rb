@@ -16,4 +16,6 @@ pg_search_scope :search_by_city,
   has_many :saved_articles
   has_many :messages, dependent: :destroy
   acts_as_favoritor
+
+  has_one_attached :profile_picture
 end
