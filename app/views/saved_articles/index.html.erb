@@ -1,5 +1,8 @@
 <h1 class="text-center">Saved articles</h1>
-
+<div class="main-container">
+  <div class="image-container">
+    <%= image_tag "plain.png", alt: 'Postcard', class: 'responsive-image' %>
+  </div>
 <div class="card-container">
   <% @saved_articles.each_slice(4) do |article_slice| %>
     <div class="row">
@@ -28,4 +31,5 @@
       <% end %>
     </div>
   <% end %>
+</div>
 </div>
