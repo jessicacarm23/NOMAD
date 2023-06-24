@@ -1,0 +1,13 @@
+.upload {
+  display: flex;
+  justify-content: space-between;
+  background-color: aqua;
+}
+
+.upload-form {
+  flex: 1;
+}
+
+.upload-submit {
+  flex: 0;
+}
