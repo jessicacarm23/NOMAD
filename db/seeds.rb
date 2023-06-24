@@ -63,7 +63,8 @@ cities_for_user = [
     email: Faker::Internet.unique.email,
     city: cities_for_user.sample,
     bio: Faker::Lorem.sentence,
-    password: 'password'
+    password: 'password',
+    profile_picture: "p1.png"
   )
 end
 

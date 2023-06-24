@@ -30,9 +30,31 @@
       width: 100px;
       font-weight: bold;
     }
+   .profile .profile-picture {
+     display: flex;
+    /* align-items: center; */
+  }
+
+
+
+     .orange-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: orange;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 15px;
+      font-weight: bold;
+      margin: 30px 30px;
+      /* border: 1px solid #4A4A4A;
+      transition: opacity 0.3s ease; */
+    }
+    /* .a :hover { opacity: 1;
+} */
   </style>
 </head>
 <body>
+<div class="card" style="width: 18rem;">
   <div class="profile">
     <h1><%= @user.name %>'s Profile</h1>
 
@@ -43,45 +65,26 @@
     <div class="field">
       <strong>City:</strong> <%= @user.city %>
     </div>
-
-    <div class="field">
+     <div class="field">
       <strong>Bio:</strong> <%= @user.bio %>
     </div>
+
+    <div class="d-inline-flex" >
+
+    <div class="field">
+   <%# <%= @user.profile_picture %>
+   <%= image_tag(@user.profile_picture, class: "profile-picture", style: "width: 100px; height: 100px;") %>
+    </div>
+    <%= button_to "Message #{@user.name}", user_chat_rooms_path(@user, @chatroom), class: "orange-button" %>
+    </div>
+  </div>
+  </div>
   </div>
 </body>
 </html>
 
-<html>
-<head>
-  <title>Home</title>
-  <style>
-    .orange-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: orange;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 15px;
-      font-weight: bold;
-      margin: 30px 30px;
-      border: 1px solid #4A4A4A;
-      transition: opacity 0.3s ease;
-    }
-    .orange-button :hover { opacity: 1;
-}
 
-      /* &:hover {
-    background-color: #0056b3;
-  }
-   */
-  </style>
-</head>
-<body>
-  <%# <a href="#" class="orange-button">Message #{@user.name}</a> %>
-    <%# <a href="#" class="orange-button">Message #{@user.name}</a> %>
 
-<%= button_to "Message #{@user.name}", user_chat_rooms_path(@user, @chatroom), class: "orange-button" %>
-</body>
-</html>
+<%# <%= button_to "Message #{@user.name}", user_chat_rooms_path(@user, @chatroom), class: "orange-button" %>
+
   <%# <%= link_to "contact user", chat_rooms_path(@chatroom)%>
-
