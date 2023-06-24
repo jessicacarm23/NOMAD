@@ -11,6 +11,4 @@ class Article < ApplicationRecord
     using: {
       tsearch: { prefix: true }
   }
-
-
 end

@@ -17,7 +17,8 @@ User.create!(
   name: "Jessica",
   passport: "Colombian",
   bio: "I love remote work as a developer",
-  city: "London"
+  city: "London",
+  profile_picture: "p1.png"
 )
 
 user1 = User.create(name: "Hailey", passport: "French", email: "jasmine@test.com", city: "Bogota", bio: "A nice person", password: 'password', profile_picture: "p1.png" )
@@ -244,7 +245,7 @@ def generate_articles4(city, topic, user)
     when "Where to Stay"
       Article.create!(
         city: city,
-        title: "Accommodation Guide: Where to Stay in #{city}",
+        title: "Stays Guide: Where to Stay in #{city}",
         content: generate_content4(topic, city),
         topic: topic,
         user_id: user.id

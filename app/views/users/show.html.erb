@@ -8,7 +8,7 @@
     }
 
     .profile {
-      max-width: 500px;
+      max-width: 600px;
       margin: 0 auto;
       padding: 20px;
       background-color: #fff;
@@ -19,6 +19,7 @@
     .profile h1 {
       font-size: 24px;
       margin-bottom: 10px;
+
     }
 
     .profile .field {
@@ -30,10 +31,43 @@
       width: 100px;
       font-weight: bold;
     }
+   /* .profile .profile-picture {
+     display: flex;
+    /* align-items: center; */
+
+
+  .centre{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+
+  }
+
+     .orange-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: orange;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 15px;
+      font-weight: bold;
+      margin: 30px 30px;
+      /* border: 1px solid #4A4A4A;
+      transition: opacity 0.3s ease; */
+    }
+    /* .a :hover { opacity: 1;
+} */
+
+
+
   </style>
 </head>
 <body>
-  <div class="profile">
+<div class="main-container postal-bkg-image">
+  <%# <div class="image-container"> %>
+    <%# <%= image_tag "plain.png", alt: 'Postcard', class: 'responsive-image' %>
+  <%# </div> %>
+  <div class="profile ">
     <h1><%= @user.name %>'s Profile</h1>
 
     <div class="field">
@@ -43,34 +77,20 @@
     <div class="field">
       <strong>City:</strong> <%= @user.city %>
     </div>
-
-    <div class="field">
+     <div class="field">
       <strong>Bio:</strong> <%= @user.bio %>
     </div>
+
+    <div class="centre" >
+
+    <div class="field">
+   <%# <%= @user.profile_picture %>
+   <%= image_tag(@user.profile_picture, class: "profile-picture", style: "width: 100px; height: 100px;") %>
+    </div>
+    <%= button_to "Message #{@user.name}", user_chat_rooms_path(@user, @chatroom), class: "orange-button" %>
+    </div>
   </div>
+</div>
+
 </body>
 </html>
-
-<html>
-<head>
-  <title>Home</title>
-  <style>
-    .orange-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: orange;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <a href="#" class="orange-button">Message #{@user.name}</a>
-    <%# <a href="#" class="orange-button">Message #{@user.name}</a> %>
-
-<%= button_to "Message #{@user.name}", user_chat_rooms_path(@user, @chatroom) %>
-</body>
-</html>
-  <%# <%= link_to "contact user", chat_rooms_path(@chatroom)%>
