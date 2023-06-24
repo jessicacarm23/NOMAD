@@ -5,10 +5,11 @@
     // background: rgb(126, 116, 43);
   width: 100%;
   display: block;
-  text-align: center;
+  text-align: left;
 // background: transparent;
   box-shadow: none;
-  // font-size: 20px;
+  font-size: 18px;
+  font-weight: 100;
 }
 .navbar-wagon-link {
   // color: rgb(251, 181, 82);
@@ -20,5 +21,9 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 20%;
+  width: 45px;
+}
+
+.nav-item {
+  padding-right: 30px;
 }
