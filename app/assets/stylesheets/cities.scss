@@ -1,5 +1,5 @@
 .pop-out {
-  background-color: rgba(250, 200, 114, 0.959);
+  background-color: rgba(255, 194, 87, 0.959);
   color: #0b0b0b;
   padding: 20px;
   border-radius: 5px;
@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgba(250, 200, 114, 0.959);
+  background-color: rgba(255, 194, 87, 0.959);
 }
 .user-list-items {
   display: flex;
@@ -43,4 +43,14 @@ body {
   font-size: 18px;
   text-align: center;
   margin-top: 10px;
+}
+
+.user-list{
+  width: 100%;
+
+// background
+}
+.topic-list{
+  width: 50%;
+  // background-color: rgba(250, 200, 114, 0.959);
 }

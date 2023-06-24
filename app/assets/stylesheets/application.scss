@@ -11,6 +11,21 @@
 @import "components/index";
 @import "pages/index";
 
-body {
-  background-color: rgba(250, 200, 114, 0.959);
+// body {
+//   background-color: rgba(250, 200, 114, 0.959);
+// }
+
+
+h2, h3 {
+  font-family: Gill Sans, sans-serif	;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(57, 56, 56);
+}
+
+h1 {
+  font-family: Brush Script MT, Brush Script Std, cursive	;
+  color: rgb(29, 29, 29);
 }
