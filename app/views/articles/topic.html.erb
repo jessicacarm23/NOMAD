@@ -1,6 +1,9 @@
 <h1 class="topic-header text-center text-bold"> <%= @city.capitalize %> - <%= @topic %></h1>
 
-
+<div class="main-container">
+  <div class="image-container">
+    <%= image_tag "plain.png", alt: 'Postcard', class: 'responsive-image' %>
+  </div>
 <div class="card-container">
   <% @articles.where(topic: @topic).each_slice(4) do |article_slice| %>
     <div class="row">
@@ -35,4 +38,5 @@
       <% end %>
     </div>
   <% end %>
+</div>
 </div>
