@@ -7,7 +7,7 @@
   </div>
   <div class="search-bar">
     <form id="search-form" action="/cities/search">
-      <%= text_field_tag :query, params[:query], class: 'search-input' %>
+      <%= text_field_tag :query, params[:query], class: 'search-input', placeholder: 'Enter a city' %>
       <input type="submit" value="Search" class="search-button">
     </form>
   </div>
