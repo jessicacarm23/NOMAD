@@ -41,7 +41,7 @@
       justify-content: center;
       align-items: center;
 
-
+  }
 
      .orange-button {
       display: inline-block;
@@ -57,11 +57,17 @@
     }
     /* .a :hover { opacity: 1;
 } */
+
+
+
   </style>
 </head>
 <body>
-
-  <div class="profile">
+<div class="main-container postal-bkg-image">
+  <%# <div class="image-container"> %>
+    <%# <%= image_tag "plain.png", alt: 'Postcard', class: 'responsive-image' %>
+  <%# </div> %>
+  <div class="profile ">
     <h1><%= @user.name %>'s Profile</h1>
 
     <div class="field">

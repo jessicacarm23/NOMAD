@@ -18,7 +18,7 @@ User.create!(
   passport: "Colombian",
   bio: "I love remote work as a developer",
   city: "London",
-  # profile_picture:
+  profile_picture: "p1.png"
 )
 
 user1 = User.create(name: "Hailey", passport: "French", email: "jasmine@test.com", city: "Bogota", bio: "A nice person", password: 'password', profile_picture: "p1.png" )
