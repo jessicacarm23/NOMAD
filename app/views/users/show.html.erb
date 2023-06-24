@@ -8,7 +8,7 @@
     }
 
     .profile {
-      max-width: 500px;
+      max-width: 600px;
       margin: 0 auto;
       padding: 20px;
       background-color: #fff;
@@ -19,6 +19,7 @@
     .profile h1 {
       font-size: 24px;
       margin-bottom: 10px;
+
     }
 
     .profile .field {
@@ -30,10 +31,15 @@
       width: 100px;
       font-weight: bold;
     }
-   .profile .profile-picture {
+   /* .profile .profile-picture {
      display: flex;
     /* align-items: center; */
-  }
+
+
+  .centre{
+    display: flex;
+      justify-content: center;
+      align-items: center;
 
 
 
@@ -54,7 +60,7 @@
   </style>
 </head>
 <body>
-<div class="card" style="width: 18rem;">
+<div class="fields" style="width: 18rem;">
   <div class="profile">
     <h1><%= @user.name %>'s Profile</h1>
 
@@ -68,8 +74,8 @@
      <div class="field">
       <strong>Bio:</strong> <%= @user.bio %>
     </div>
-
-    <div class="d-inline-flex" >
+  </div>
+    <div class="centre" >
 
     <div class="field">
    <%# <%= @user.profile_picture %>
@@ -79,7 +85,7 @@
     </div>
   </div>
   </div>
-  </div>
+
 </body>
 </html>
 
