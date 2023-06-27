@@ -1,3 +1,20 @@
+
+<head><style>
+.profile-picture-different{  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 20px;}
+.centre{
+  display: flex;
+      justify-content: center;
+      align-items: center;
+  }</style></head>
+
+
+
+
+
 <div class="main-container">
   <div class="image-container">
     <%= image_tag "plain.png", alt: 'Postcard', class: 'responsive-image' %>
@@ -13,6 +30,10 @@
             <%= @article.title %>
           </h3>
           <p class="text-center"><%= @article.content %></p>
+
+              <p class="text-center written-by">Written by <%=@article.user.name  %></p>
+              <%= image_tag(@article.user.profile_picture, class: "profile-picture-different", style: "width: 100px; height: 100px;") %>
+
           <div class="text-center">
             <% favorited = current_user.favorited?(@article) %>
             <%= link_to article_favorite_path(@article), class: "text-center" do %>
@@ -21,7 +42,11 @@
               <% else %>
                 <i class="far fa-heart"></i>
               <% end %>
+                 <div class="field">
+            </div>
+              </div>
             <% end %>
+           <%# <%= button_to "Message #{@article.user.name}", user_chat_rooms_path(@article, @user_id, @chatroom), class: "orange-button" %>
           </div>
         </div>
       </div>

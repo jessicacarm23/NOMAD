@@ -52,8 +52,9 @@
       border-radius: 15px;
       font-weight: bold;
       margin: 30px 30px;
-      /* border: 1px solid #4A4A4A;
-      transition: opacity 0.3s ease; */
+      border: none;
+      border: 0.5px solid #4A4A4A;
+      /* transition: opacity 0.3s ease; */ */
     }
     /* .a :hover { opacity: 1;
 } */
@@ -92,6 +93,7 @@
     </div>
     <%= button_to "Message #{@user.name}", user_chat_rooms_path(@user, @chatroom), class: "orange-button" %>
     </div>
+  </div>
   </div>
 </div>
 
