@@ -273,4 +273,4 @@ def generate_articles(cities, topics, user)
   end
 end
 
-generate_articles(cities, topics, user1)
+generate_articles(cities, topics, user2)

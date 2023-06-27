@@ -31,7 +31,7 @@
           </h3>
           <p class="text-center"><%= @article.content %></p>
 
-              <p class="text-center written-by">Written by <%=@article.user.name  %></p>
+              <p class="text-center written-by">Written by <%=link_to @article.user.name ,user_path(@article.user)  %></p>  <%=  %>
               <%= image_tag(@article.user.profile_picture, class: "profile-picture-different", style: "width: 100px; height: 100px;") %>
 
           <div class="text-center">
