@@ -38,7 +38,7 @@ user14 = User.create(name: "Iurie", passport: "British", email: "teest11@gmail.c
 user15 = User.create(name: "Anatoly", passport: "USA", email: "teest10@test.com", city: "London", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "12-modified.png")
 
 user16 = User.create(name: "Laurie", passport: "USA", email: "teest12@test.com", city: "Paris", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "13-modified.png")
-user17 = User.create(name: "Linas", passport: "French", email: "teest13@test.com", city: "Paris", bio: "A nice person", password: 'password', profile_picture: "14-modified" )
+user17 = User.create(name: "Linas", passport: "French", email: "teest13@test.com", city: "Paris", bio: "A nice person", password: 'password', profile_picture: "14-modified.png" )
 user18 = User.create(name: "Baruc", passport: "British", email: "teest14@gmail.com", city: "Paris", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password', profile_picture: "15-modified.png")
 user19 = User.create(name: "Juan", passport: "USA", email: "teest15@test.com", city: "Paris", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "16-modified.png")
 user20 = User.create(name: "Rupert", passport: "French", email: "teest16@test.com", city: "Paris", bio: "A nice person", password: 'password', profile_picture: "17-modified.png" )
