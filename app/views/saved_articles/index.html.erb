@@ -1,3 +1,5 @@
+
+
 <h1 class="text-center">Saved articles</h1>
 <div class="main-container">
   <div class="image-container">
@@ -14,6 +16,8 @@
                 <%= article.title %>
               </h3>
               <p class="text-center"><%= article.content %></p>
+
+
               <div class="text-center">
                 <% favorited = current_user.favorited?(article) %>
                 <%# <%= link_to favorited ? "Unfavorite" : "Favorite", article_favorite_path(article) %>
