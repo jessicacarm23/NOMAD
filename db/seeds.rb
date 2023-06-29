@@ -24,6 +24,30 @@ User.create!(
 user1 = User.create(name: "Hailey", passport: "French", email: "jasmine@test.com", city: "Bogota", bio: "A nice person", password: 'password', profile_picture: "p1.png" )
 user2 = User.create(name: "Harry", passport: "British", email: "bill@gmail.com", city: "Bogota", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password', profile_picture: "p2.png")
 user3 = User.create(name: "Megan", passport: "USA", email: "lisa@test.com", city: "Bogota", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "p3.png")
+user4 = User.create(name: "Laura", passport: "French", email: "teest1@test.com", city: "Bogota", bio: "A nice person", password: 'password', profile_picture: "1-modified.png" )
+user5 = User.create(name: "Rameed", passport: "British", email: "teest2@gmail.com", city: "Bogota", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password', profile_picture: "2-modified.png")
+user6 = User.create(name: "Craig", passport: "USA", email: "teest@test.com", city: "Bogota", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "3-modified.png")
+user7 = User.create(name: "Borhan", passport: "French", email: "teest3@test.com", city: "Bogota", bio: "A nice person", password: 'password', profile_picture: "4-modified.png" )
+user8 = User.create(name: "Lucas", passport: "British", email: "teest4@gmail.com", city: "Bogota", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password', profile_picture: "5-modified.png")
+user9 = User.create(name: "Belen", passport: "USA", email: "teest5@test.com", city: "Bogota", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "6-modified.png")
+user10 = User.create(name: "Jasmin", passport: "French", email: "teest6@test.com", city: "Bogota", bio: "A nice person", password: 'password', profile_picture: "7-modified.png" )
+user11= User.create(name: "Martin", passport: "British", email: "teest7@gmail.com", city: "London", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password', profile_picture: "8-modified.png")
+user12 = User.create(name: "Sneha", passport: "USA", email: "teest8@test.com", city: "London", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "9-modified.png")
+user13 = User.create(name: "Tuyen", passport: "French", email: "teest9@test.com", city: "London", bio: "A nice person", password: 'password', profile_picture: "10-modified.png" )
+user14 = User.create(name: "Iurie", passport: "British", email: "teest11@gmail.com", city: "London", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password', profile_picture: "11-modified.png")
+user15 = User.create(name: "Anatoly", passport: "USA", email: "teest10@test.com", city: "London", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "12-modified.png")
+
+user16 = User.create(name: "Laurie", passport: "USA", email: "teest12@test.com", city: "Paris", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "13-modified.png")
+user17 = User.create(name: "Linas", passport: "French", email: "teest13@test.com", city: "Paris", bio: "A nice person", password: 'password', profile_picture: "14-modified" )
+user18 = User.create(name: "Baruc", passport: "British", email: "teest14@gmail.com", city: "Paris", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password', profile_picture: "15-modified.png")
+user19 = User.create(name: "Juan", passport: "USA", email: "teest15@test.com", city: "Paris", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "16-modified.png")
+user20 = User.create(name: "Rupert", passport: "French", email: "teest16@test.com", city: "Paris", bio: "A nice person", password: 'password', profile_picture: "17-modified.png" )
+user21= User.create(name: "Syed", passport: "British", email: "tees4t@gmail.com", city: "Paris", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password', profile_picture: "18-modified.png")
+user22 = User.create(name: "Mai", passport: "USA", email: "teesgt@test.com", city: "Paris", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "19-modified.png")
+user23 = User.create(name: "Alexis", passport: "French", email: "teefst@test.com", city: "Paris", bio: "A nice person", password: 'password', profile_picture: "20-modified.png" )
+user24 = User.create(name: "Anh", passport: "British", email: "teesst@gmail.com", city: "Paris", bio: "I am currently looking for a new gig...It's complicated. Love living a lavish life, new on paying taxes", password: 'password', profile_picture: "p1.png")
+user25 = User.create(name: "Michal", passport: "USA", email: "teessdft@test.com", city: "Paris", bio: "I'm an actress. Of all the places I never imagined I would end up in Bogota, but loving it!", password: 'password', profile_picture: "p1.png")
+
 # user4 = User.create(name: "Edward", passport: "Netherlands", email: "edward@gmail.com", city: "Bogota", bio: "Something", password: 'password')
 
 # user1.profile_picture.attach(io: File.open(Rails.root.join("app", "assets", "images", "p1.png")), filename: "p1.png")
@@ -52,7 +76,7 @@ cities = [
 ]
 
 cities_for_user = [
-  "London", "Paris", "New York", "Tokyo", "Sydney", "Rome", "Dubai", "Barcelona", "Rio de Janeiro",
+  "New York", "Tokyo", "Sydney", "Rome", "Dubai", "Barcelona", "Rio de Janeiro",
   "Amsterdam", "Berlin", "Cairo", "Bangkok", "Hanoi", "Mumbai", "Cape Town", "Moscow", "Toronto", "Los Angeles",
   "San Francisco", "Dublin", "Athens", "Seoul", "Lisbon", "Vienna", "Stockholm", "Prague", "Budapest", "Istanbul"
 ]
