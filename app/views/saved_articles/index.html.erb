@@ -11,7 +11,7 @@
           <div class="card mb-3">
             <div class="card-body">
               <h3 class="text-center text-bold text-orange">
-                <%= link_to article.title, article_path(article) %>
+                <%= article.title %>
               </h3>
               <p class="text-center"><%= truncate(article.content, length: 100) %></p>
               <div class="text-center">
