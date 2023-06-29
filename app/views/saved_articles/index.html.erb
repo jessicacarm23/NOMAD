@@ -1,3 +1,5 @@
+
+
 <h1 class="text-center">Saved articles</h1>
 <div class="main-container">
   <div class="image-container">
@@ -13,6 +15,7 @@
               <h3 class="text-center text-bold text-orange">
                  <%= link_to article.title, article_path(article) %>
               </h3>
+
               <p class="text-center"><%= truncate(article.content, length: 100) %></p>
                <div class="text-center">
                 <% favorited = current_user.favorited?(article) %>
