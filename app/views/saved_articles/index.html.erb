@@ -13,12 +13,11 @@
           <div class="card mb-3">
             <div class="card-body">
               <h3 class="text-center text-bold text-orange">
-                <%= article.title %>
+                 <%= link_to article.title, article_path(article) %>
               </h3>
-              <p class="text-center"><%= article.content %></p>
 
-
-              <div class="text-center">
+              <p class="text-center"><%= truncate(article.content, length: 100) %></p>
+               <div class="text-center">
                 <% favorited = current_user.favorited?(article) %>
                 <%# <%= link_to favorited ? "Unfavorite" : "Favorite", article_favorite_path(article) %>
                 <%= link_to article_favorite_path(article), class: "text-center" do %>
@@ -28,6 +27,7 @@
                     <i class="far fa-heart"></i>
                   <% end %>
                 <% end %>
+                 </div>
               </div>
             </div>
           </div>

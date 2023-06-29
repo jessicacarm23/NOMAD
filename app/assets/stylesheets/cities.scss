@@ -47,10 +47,23 @@ body {
 
 .user-list{
   width: 100%;
-
+  padding-left: 30px;
 // background
 }
+
+// .user-list h1{
+//   align-items: center;
+// }
 .topic-list{
   width: 50%;
   // background-color: rgba(250, 200, 114, 0.959);
 }
+
+.transparent-card {
+  background-color: transparent !important;
+  --bs-card-border-color: transparent !important;
+}
+
+// .card-same-height {
+//   height: 500px;
+// }
